@@ -44,7 +44,6 @@ class ExcessMTL(AbsWeighting):
             self.loss_weight = self.loss_weight * torch.exp(w* robust_step_size)
             self.loss_weight = self.loss_weight / self.loss_weight.sum() * self.task_num
             self.loss_weight = self.loss_weight.detach().clone()
-        print(self.loss_weight)
 
         self.encoder.zero_grad()
         loss = torch.mul(losses, self.loss_weight).sum()
