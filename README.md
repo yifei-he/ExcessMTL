@@ -24,8 +24,8 @@ There are several parameters you can specify:
 * `multi_input`: Pass this argument if different tasks have different input data. Only NYUv2 uses the same input data for different tasks.
 * `weighting`: Use our algorithm ExcessMTL, or specify any other algorithms implemented by LibMTL.
 * `dataset_path`: Specify the path you store the OfficeHome dataset.
-* `robust_step_size`: A parameter specific to ExcessMTL and GroupDRO. A larger value makes the weights change more with excess risks or losses.
-* `flip`: The amount of noise injected in the training set. 
+* `robust_step_size`: A parameter specific to ExcessMTL and GroupDRO. A larger value makes the task weights change faster with changes in excess risks or losses.
+* `flip`: A value between 0 and 1, indicating the amount of noise injected in the training set. 
 * `flipped_task`: The task to inject noise.
 
 Note that both `flip` and `flipped_task` are specific to our experimental setup where noise is injected into a task. If you do not pass those arguments, no noise will be injected. Among the four datasets implemented in LibMTL, noise injection is supported in Office-Home and NYUv2.
